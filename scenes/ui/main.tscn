@@ -27,6 +27,9 @@ size_flags_horizontal = 3
 [node name="AddCharacter" parent="Top/TopLayout/HPanel/Heroes" unique_id=806880871 instance=ExtResource("1_0ay0p")]
 layout_mode = 2
 
+[node name="HeroesContainer" type="VBoxContainer" parent="Top/TopLayout/HPanel/Heroes" unique_id=284672285]
+layout_mode = 2
+
 [node name="CombatLog" type="VBoxContainer" parent="Top/TopLayout" unique_id=2101843556]
 layout_mode = 2
 size_flags_horizontal = 3
@@ -45,6 +48,9 @@ layout_mode = 2
 
 [node name="NameInput" parent="Top/TopLayout/EPanel/Enemies/AddCharacter" index="0" unique_id=576159744]
 placeholder_text = "Enemy Name"
+
+[node name="EnemiesContainer" type="VBoxContainer" parent="Top/TopLayout/EPanel/Enemies" unique_id=540803648]
+layout_mode = 2
 
 [node name="Bot" type="MarginContainer" parent="." unique_id=572446489]
 layout_mode = 2

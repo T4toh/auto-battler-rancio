@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://bvw7k8dnlotrj"]
+
+[node name="CharacterRow" type="HBoxContainer" unique_id=1734859549]
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="NameLabel" type="Label" parent="." unique_id=2066525364]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="HpLabel" type="Label" parent="." unique_id=2062075601]
+custom_minimum_size = Vector2(30, 0)
+layout_mode = 2
+
+[node name="AtkLabel" type="Label" parent="." unique_id=1563817195]
+custom_minimum_size = Vector2(30, 0)
+layout_mode = 2
+
+[node name="DefLabel" type="Label" parent="." unique_id=1850415654]
+custom_minimum_size = Vector2(30, 0)
+layout_mode = 2
