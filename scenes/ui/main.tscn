@@ -1,0 +1,60 @@
+[gd_scene format=3 uid="uid://dx5grjw4wdtci"]
+
+[ext_resource type="PackedScene" uid="uid://bbn132mhdmocj" path="res://scenes/ui/add_character.tscn" id="1_0ay0p"]
+
+[node name="Main" type="VBoxContainer" unique_id=1781402268]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Top" type="MarginContainer" parent="." unique_id=38472103]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="TopLayout" type="HBoxContainer" parent="Top" unique_id=417604070]
+layout_mode = 2
+
+[node name="HPanel" type="VBoxContainer" parent="Top/TopLayout" unique_id=1806880444]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Heroes" type="VBoxContainer" parent="Top/TopLayout/HPanel" unique_id=294251428]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="AddCharacter" parent="Top/TopLayout/HPanel/Heroes" unique_id=806880871 instance=ExtResource("1_0ay0p")]
+layout_mode = 2
+
+[node name="CombatLog" type="VBoxContainer" parent="Top/TopLayout" unique_id=2101843556]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 2.0
+
+[node name="EPanel" type="VBoxContainer" parent="Top/TopLayout" unique_id=274971744]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Enemies" type="VBoxContainer" parent="Top/TopLayout/EPanel" unique_id=445692372]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="AddCharacter" parent="Top/TopLayout/EPanel/Enemies" unique_id=774664017 instance=ExtResource("1_0ay0p")]
+layout_mode = 2
+
+[node name="NameInput" parent="Top/TopLayout/EPanel/Enemies/AddCharacter" index="0" unique_id=576159744]
+placeholder_text = "Enemy Name"
+
+[node name="Bot" type="MarginContainer" parent="." unique_id=572446489]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 2.0
+
+[node name="EndCombatDialog" type="AcceptDialog" parent="." unique_id=787719793]
+title = "Combate Terminado"
+size = Vector2i(200, 150)
+ok_button_text = "Resetear"
+
+[editable path="Top/TopLayout/HPanel/Heroes/AddCharacter"]
+[editable path="Top/TopLayout/EPanel/Enemies/AddCharacter"]
