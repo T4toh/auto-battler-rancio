@@ -17,11 +17,11 @@ public partial class Main : Control
 
     public override void _Ready()
     {
-        _addHero = GetNode<AddCharacter>("Top/HeroesPanel/AddCharacter");
-        _addEnemy = GetNode<AddCharacter>("Top/EnemiesPanel/AddCharacter");
+        _addHero = GetNode<AddCharacter>("Top/TopLayout/HPanel/Heroes/AddCharacter");
+        _addEnemy = GetNode<AddCharacter>("Top/TopLayout/EPanel/Enemies/AddCharacter");
 
-        _heroesContainer = GetNode<VBoxContainer>("Top/HeroesPanel/HeroesContainer");
-        _enemiesContainer = GetNode<VBoxContainer>("Top/EnemiesPanel/EnemiesContainer");
+        _heroesContainer = GetNode<VBoxContainer>("Top/TopLayout/HPanel/Heroes/HeroesContainer");
+        _enemiesContainer = GetNode<VBoxContainer>("Top/TopLayout/EPanel/Enemies/EnemiesContainer");
 
         _addHero.CharacterSubmitted += OnHeroAdded;
         _addEnemy.CharacterSubmitted += OnEnemyAdded;
