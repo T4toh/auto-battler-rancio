@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://dx5grjw4wdtci"]
 
 [ext_resource type="PackedScene" uid="uid://bbn132mhdmocj" path="res://scenes/ui/add_character.tscn" id="1_0ay0p"]
+[ext_resource type="Script" uid="uid://bbgpils7n6pln" path="res://scripts/ui/Main.cs" id="1_2p1s2"]
 
 [node name="Main" type="VBoxContainer" unique_id=1781402268]
 anchors_preset = 15
@@ -8,10 +9,15 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_2p1s2")
 
 [node name="Top" type="MarginContainer" parent="." unique_id=38472103]
 layout_mode = 2
 size_flags_vertical = 3
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
 
 [node name="TopLayout" type="HBoxContainer" parent="Top" unique_id=417604070]
 layout_mode = 2
@@ -56,6 +62,10 @@ layout_mode = 2
 layout_mode = 2
 size_flags_vertical = 3
 size_flags_stretch_ratio = 2.0
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
 
 [node name="EndCombatDialog" type="AcceptDialog" parent="." unique_id=787719793]
 title = "Combate Terminado"
