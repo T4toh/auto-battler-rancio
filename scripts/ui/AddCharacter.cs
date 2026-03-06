@@ -32,9 +32,6 @@ public partial class AddCharacter : HBoxContainer
     {
         string name = _input.Text.Trim();
 
-        if (name == "")
-            return;
-
         EmitSignal(SignalName.CharacterSubmitted, name);
 
         _input.Text = "";

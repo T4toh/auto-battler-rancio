@@ -1,6 +1,9 @@
 [gd_scene format=3 uid="uid://bvw7k8dnlotrj"]
 
+[ext_resource type="Script" path="res://scripts/ui/CharacterRow.cs" id="1_row"]
+
 [node name="CharacterRow" type="HBoxContainer" unique_id=1734859549]
+script = ExtResource("1_row")
 offset_right = 40.0
 offset_bottom = 40.0
 

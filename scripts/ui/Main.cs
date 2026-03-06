@@ -3,14 +3,18 @@ using Godot;
 
 public partial class Main : Control
 {
+    private string[] _defaultHeroNames = ["Warrior", "Mage", "Rogue", "Cleric", "Paladin"];
+
+    private string[] _defaultEnemyNames = ["Goblin", "Orc", "Skeleton", "Bandit", "Slime"];
     private AddCharacter _addHero;
     private AddCharacter _addEnemy;
 
     private VBoxContainer _heroesContainer;
     private VBoxContainer _enemiesContainer;
 
-    [Export]
-    public PackedScene CharacterRowScene;
+    private readonly PackedScene _characterRowScene = GD.Load<PackedScene>(
+        "res://scenes/ui/CharacterRow.tscn"
+    );
 
     private Party _heroes = new();
     private Party _enemies = new();
@@ -29,7 +33,16 @@ public partial class Main : Control
 
     private void OnHeroAdded(string name)
     {
+        if (_heroes.IsFull())
+            return;
+
+        if (string.IsNullOrWhiteSpace(name))
+        {
+            name = _defaultHeroNames[_heroes.Members.Count];
+        }
+
         var character = new Character(name, 100, 10, 5);
+
         _heroes.AddMember(character);
 
         AddCharacterRow(_heroesContainer, character);
@@ -37,7 +50,16 @@ public partial class Main : Control
 
     private void OnEnemyAdded(string name)
     {
+        if (_enemies.IsFull())
+            return;
+
+        if (string.IsNullOrWhiteSpace(name))
+        {
+            name = _defaultEnemyNames[_enemies.Members.Count];
+        }
+
         var character = new Character(name, 100, 10, 5);
+
         _enemies.AddMember(character);
 
         AddCharacterRow(_enemiesContainer, character);
@@ -45,7 +67,7 @@ public partial class Main : Control
 
     private void AddCharacterRow(VBoxContainer container, Character character)
     {
-        var row = CharacterRowScene.Instantiate<CharacterRow>();
+        var row = _characterRowScene.Instantiate<CharacterRow>();
         container.AddChild(row);
         row.SetCharacter(character);
     }

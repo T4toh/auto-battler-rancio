@@ -4,11 +4,18 @@ using System.Linq;
 
 public class Party
 {
+    public int MaxMembers => 5;
+    private static readonly Random Rng = new();
+
     public List<Character> Members { get; private set; } = [];
 
-    public void AddMember(Character character)
+    public bool AddMember(Character character)
     {
+        if (Members.Count >= MaxMembers)
+            return false;
+
         Members.Add(character);
+        return true;
     }
 
     public List<Character> GetAliveMembers()
@@ -23,8 +30,12 @@ public class Party
         if (alive.Count == 0)
             return null;
 
-        var rng = new Random();
-        return alive[rng.Next(alive.Count)];
+        return alive[Rng.Next(alive.Count)];
+    }
+
+    public bool IsFull()
+    {
+        return Members.Count >= MaxMembers;
     }
 
     public void Clear()
