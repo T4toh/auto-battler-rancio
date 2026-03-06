@@ -46,6 +46,7 @@ public partial class Main : Control
         _heroes.AddMember(character);
 
         AddCharacterRow(_heroesContainer, character);
+        Check_Party_Limit();
     }
 
     private void OnEnemyAdded(string name)
@@ -63,6 +64,7 @@ public partial class Main : Control
         _enemies.AddMember(character);
 
         AddCharacterRow(_enemiesContainer, character);
+        Check_Party_Limit();
     }
 
     private void AddCharacterRow(VBoxContainer container, Character character)
@@ -70,5 +72,31 @@ public partial class Main : Control
         var row = _characterRowScene.Instantiate<CharacterRow>();
         container.AddChild(row);
         row.SetCharacter(character);
+    }
+
+    private void Check_Party_Limit()
+    // This method should be called after a char is added to check if the party is full.
+    // If it is, should disable the AddCharacter component and show a message to the user.
+    // In this state it checkes both parties, so it can be called after adding a hero or an enemy.
+    {
+        if (_heroes.IsFull())
+        {
+            _addHero.Visible = false;
+            GD.Print("Heroes party is full!");
+        }
+        else
+        {
+            _addHero.Visible = true;
+        }
+
+        if (_enemies.IsFull())
+        {
+            _addEnemy.Visible = false;
+            GD.Print("Enemies party is full!");
+        }
+        else
+        {
+            _addEnemy.Visible = true;
+        }
     }
 }
