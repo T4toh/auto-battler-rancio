@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://dx5grjw4wdtci"]
 
-[ext_resource type="PackedScene" uid="uid://bbn132mhdmocj" path="res://scenes/ui/add_character.tscn" id="1_0ay0p"]
+[ext_resource type="PackedScene" uid="uid://bbn132mhdmocj" path="res://scenes/ui/AddCharacter.tscn" id="1_0ay0p"]
 [ext_resource type="Script" uid="uid://bbgpils7n6pln" path="res://scripts/ui/Main.cs" id="1_2p1s2"]
 
 [node name="Main" type="VBoxContainer" unique_id=1781402268]
