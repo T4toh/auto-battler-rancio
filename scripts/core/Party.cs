@@ -20,7 +20,7 @@ public class Party
 
     public List<Character> GetAliveMembers()
     {
-        return Members.Where(c => c.IsAlive()).ToList();
+        return [.. Members.Where(c => c.IsAlive())];
     }
 
     public Character GetRandomAliveMember()
@@ -31,6 +31,11 @@ public class Party
             return null;
 
         return alive[Rng.Next(alive.Count)];
+    }
+
+    public bool HasAliveMembers()
+    {
+        return Members.Any(c => c.IsAlive());
     }
 
     public bool IsFull()

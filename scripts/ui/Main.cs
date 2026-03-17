@@ -3,6 +3,8 @@ using Godot;
 
 public partial class Main : Control
 {
+    private CombatLog _combatLog;
+    private CombatManager _combat;
     private string[] _defaultHeroNames = ["Warrior", "Mage", "Rogue", "Cleric", "Paladin"];
 
     private string[] _defaultEnemyNames = ["Goblin", "Orc", "Skeleton", "Bandit", "Slime"];
@@ -21,6 +23,10 @@ public partial class Main : Control
 
     public override void _Ready()
     {
+        _combat = new CombatManager(_heroes, _enemies);
+
+        _combatLog = GetNode<CombatLog>("Top/TopLayout/CombatLog");
+
         _addHero = GetNode<AddCharacter>("Top/TopLayout/HPanel/Heroes/AddCharacter");
         _addEnemy = GetNode<AddCharacter>("Top/TopLayout/EPanel/Enemies/AddCharacter");
 
